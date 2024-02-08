@@ -1,0 +1,68 @@
+<div class="container mt-4" >
+  <h1>Uploader une image</h1>
+  <div class="card">
+         
+<form>
+ 
+  <div class="form-group">
+    <label >Commentaire</label>
+    <input type="text"  [(ngModel)]="comment" [ngModelOptions]="{standalone: true}"   class="form-control" id="comment" name="comment" placeholder="Enter Name">
+  </div>
+  
+  <div class="form-group">
+      <label >Sélectionner une image </label>
+      <input type="file" [(ngModel)]="imageUrl" [ngModelOptions]="{standalone: true}" class="form-control-file" id="imageUrl" name="imageUrl" placeholder="Enter image">
+    </div>
+
+    <div class="form-group">
+      <label >location</label>
+      <input type="text" [(ngModel)]="location" [ngModelOptions]="{standalone: true}" class="form-control" id="location" name="location" placeholder="Enter Mobile">
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-4" (click)="register()" >Submit</button>
+</form>
+</div>
+</div>
+
+<div>
+<div class="container mt-4" >
+
+    <h1>Ticket Table</h1>
+
+
+
+
+<table class="table">
+    <thead>
+   
+    
+    <tr>
+        
+        <th scope="col">Commentaire</th>
+        <th scope="col">image</th>
+        <th scope="col">location</th>
+        <th scope="col">Options</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let TicketItem of TicketArray">
+
+       
+        <td>{{TicketItem.comment}}</td>
+        <td>{{TicketItem.imageUrl }}</td>
+        <td>{{TicketItem.location }}</td>
+
+        <td>
+          <button type="button" class="btn btn-success" (click)="setUpdate(TicketItem)">Edit</button>
+          
+          <button type="button" class="btn btn-danger" (click)="setDelete(TicketItem)">Delete</button>
+        
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+</div>
