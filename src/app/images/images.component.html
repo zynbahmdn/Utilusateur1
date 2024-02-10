@@ -22,9 +22,17 @@
         <label >location</label>
         <input type="text" [(ngModel)]="location" [ngModelOptions]="{standalone: true}" class="form-control" id="location" name="location" placeholder="Enter Mobile">
       </div>
-
+    </form>
+      <google-map height="400px" width="100%" [center]="mapCenter" [zoom]="mapZoom">
+    
+      </google-map>
+      <div>
+        <label for="latitude">Latitude:</label><br>
+        <input type="text" id="latitude" [(ngModel)]="latitude"><br>
+        <label for="longitude">Longitude:</label><br>
+        <input type="text" id="longitude" [(ngModel)]="longitude"><br><br>
       <button type="submit" class="btn btn-primary mt-4" (click)="register()" >Submit</button>
-  </form>
+
 </div>
 </div>
 

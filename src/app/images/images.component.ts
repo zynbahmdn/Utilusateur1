@@ -17,6 +17,23 @@ export class ImagesComponent  {
   imageUrl: File | undefined;
   location: string ="";
     id= "";
+  mapCenter: google.maps.LatLngLiteral = { lat: 0, lng: 0 };
+mapZoom = 2;
+
+markerPosition: google.maps.LatLngLiteral = this.mapCenter;
+latitude = '';
+longitude = '';
+
+showLocation() {
+  const lat = parseFloat(this.latitude);
+  const lng = parseFloat(this.longitude);
+  if (!isNaN(lat) && !isNaN(lng)) {
+    this.mapCenter = { lat, lng };
+    this.markerPosition = { lat, lng };
+  } else {
+    alert('Please enter valid latitude and longitude.');
+  }
+}
 
   constructor(private http: HttpClient )
   {

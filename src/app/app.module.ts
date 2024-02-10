@@ -7,6 +7,7 @@ import { ImagesComponent } from './images/images.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AdministrationComponent } from './administration/administration.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AdministrationComponent } from './administration/administration.compone
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    GoogleMapsModule
   
   ],
   providers: [
